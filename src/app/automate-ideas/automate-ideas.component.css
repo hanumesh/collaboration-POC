@@ -1,0 +1,195 @@
+.btn-primary.custom-btn {
+    background-color: #004f6bfa!important;
+    height: 45px;
+    width: 155px;
+    margin-right: 5px;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+/*#searchinput[_ngcontent-c3] {
+    width: 100%;
+} */
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.table-bordered td, .table-bordered th {
+  padding: 6px;
+}
+.modal-body{
+  height: 500px;
+  overflow-y: auto;
+}
+
+#myInput {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+  }
+
+  #searchclear {
+    position:absolute;
+    right:5px;
+
+    top:0px;
+    bottom:0;
+    height:14px;
+    margin:auto;
+    font-size:14px;
+    cursor:pointer;
+    color:#ccc;
+}
+#searchinput {
+    width: 100%;
+}
+
+.hidden-file {
+    visibility: hidden; 
+    position: absolute;
+    overflow: hidden; 
+    width: 0px; 
+    height:0px;
+    border:none;
+    margin:0; 
+    padding:0
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    height: 40px;
+    width: 111px;
+    margin-right: 5px;
+}
+
+
+/* stepper css started*/
+.labelid{
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-left: 7px;
+}
+
+.wrapper-progressBar {
+    width: 80%
+}
+
+.progressBar {
+  counter-reset: step;
+  padding-left: 0px;
+  
+}
+
+.progressBar li {
+    list-style-type: none;
+    float: left;
+    width: 16%;
+    position: relative;
+    text-align: center;
+}
+
+.progressBar li:before {
+    cursor:pointer;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 20px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    margin: 0 auto 10px;
+    background-color: white
+}
+
+.progressBar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    top: 9px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressBar li:first-child:after {
+    content: none;
+}
+
+.progressBar li.active {
+    color: white;
+}
+
+.progressBar li.tt:before {
+   border-color: #0d9fbb;
+    color: #0d9fbb;
+    
+}
+
+.progressBar li.active:before {
+    border-color: #0d9fbb;
+    background-color: #0d9fbb;
+}
+
+.progressBar li.active + li:after {
+    background-color: #0d9fbb;
+}
+
+/* test */
+
+.progressBartest li {
+    list-style-type: none;
+    float: left;
+    width: 10px;
+    position: relative;
+    text-align: center;
+} 
+
+#progressID{
+    margin-bottom: -28px;
+}
+
+.btn-danger {
+    color: #131111;
+    background-color: #d0cbcb;
+    border-color: #d0cbcb;
+}
+
+/* stepper css ended */
+
+#tableActionEditID{
+    font-size: 12px;
+    -webkit-appearance: button;
+    border-radius: 50px;
+    height: 25px;
+    /* color: blue; */
+    background-color: #05526ea6;
+    border-color: #05526ea6;
+    color: white;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    height: 38px;
+    margin-left: 5px;
+}
