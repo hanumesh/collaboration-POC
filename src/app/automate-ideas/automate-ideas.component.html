@@ -8,30 +8,33 @@
       <h1 class="text-center">Register with bootstrap popup</h1>
       <button type="button" class="btn btn-primary" (click) = "show()">Register</button>
        </div> -->
-       <app-header></app-header> 
-       <div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
-       
-         <div class="row">
-           <div class="col-md-9" style="padding-top: 5%;">
-               <button type="button" class="btn btn-primary custom-btn-lg"  style="font-size: 16px;line-height: 1;" data-toggle="modal" data-target="#myModal">
-                   <!-- <i class="icon-user icon-white">+</i>NEW DEPLOY FIREWALL -->
-                   + NEW AUTOMATION IDEAS
-                  </button>
-                
-                  <!-- <button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myFMModal">Firewall Migration</button>
+<app-header></app-header>
+<div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
+
+  <div class="row">
+    <div class="col-md-12" style="padding-top: 5%; padding-bottom: 2%">
+      <button type="button" class="btn btn-primary custom-btn-lg"
+        style="font-size: 16px;line-height: 1;" data-toggle="modal" data-target="#myModal">
+        <!-- <i class="icon-user icon-white">+</i>NEW DEPLOY FIREWALL -->
+        + NEW AUTOMATION IDEAS
+      </button>
+
+      <!-- <button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myFMModal">Firewall Migration</button>
        
                   <button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myFUModal">Firewall Upgrade</button>       
                   -->
-                  <button type="button" class="btn btn-primary" (click)="downloadReport($event)" style="background-color: #ebeff1;border-color: #0c0c0c;margin-right:5px;height: 45px;width:45px;" >
-                     <i class='fa fa-download' style="color:#0e0e0e;font-size: 16px; padding: 2%; float:right;"></i>
-                   </button>
-                   <button type="button" class="btn btn-primary" id="refreshBtn" (click)="refreshDataTable($event)" style="background-color: #ebeff1;border-color: #0c0c0c;height: 45px;width:45px;">
-                     <i class="fa fa-refresh" style="color:#0e0e0e;font-size: 16px; padding:2%; float:right;" ></i>
-                   </button> 
-           </div>
-       
-         </div>
-       <!--
+      <button type="button" class="btn btn-primary" (click)="downloadReport($event)"
+        style="background-color: #ebeff1;border-color: #0c0c0c;margin-right:15px;height:30px; float:right;padding-bottom: 2%;">
+        <i class='fa fa-download' style="color:#0e0e0e;font-size: 16px; padding: 2%;"></i>
+      </button>
+      <button type="button" class="btn btn-primary" id="refreshBtn" (click)="refreshDataTable($event)"
+        style="background-color: #ebeff1;border-color: #0c0c0c;height: 30px; float:right;padding-bottom: 2%;">
+        <i class="fa fa-refresh" style="color:#0e0e0e;font-size: 16px; padding:2%; float:right;"></i>
+      </button>
+    </div>
+
+  </div>
+  <!--
          <div class="row" style="padding-top: 3%;">
            <div class="col-md-3">
              <div class="btn-group">
@@ -55,45 +58,41 @@
            </button>
          </div>
        -->
-         <!-- Filter Search started -->
-         <div class="row" style="padding-top: 0%">
-           <div class="col-md-3">
-             <!--                <div class="btn btn-default">
+  <!-- Filter Search started -->
+  <div class="row" style="padding-top: 0%">
+    <div class="col-md-3">
+      <!--                <div class="btn btn-default">
                                          <input type="text" placeholder="Search.." name="search">
                                          <button style="margin-left: 4px" type="submit">search</button>
                                      </div> -->
-             <!--       <div class="input-group">
+      <!--       <div class="input-group">
                                              <input type="text" class="form-control" placeholder=" Search for...">  
                                                <span class="input-group-btn"> -->
-             <!--  <button class="btn btn-search ml-1" type="button"><i class="fa fa-search fa-fw"></i> Search</button> -->
-             <!--                 <button class="btn btn-search ml-1" type="button">Search</button>
+      <!--  <button class="btn btn-search ml-1" type="button"><i class="fa fa-search fa-fw"></i> Search</button> -->
+      <!--                 <button class="btn btn-search ml-1" type="button">Search</button>
                                                </span>
                                          </div> -->
-             <!-- Another variation with a button Started -->
-             <div class="form-group has-search">
-               <!-- <button class="btn btn-default" contenteditable="false"><i class="fa fa-search form-control-feedback"></i></button> -->
-       
-               <span class="fa fa-search form-control-feedback"></span>
-               <input type="text" id="searchinput" class="form-control" [(ngModel)]="TaskName" placeholder="Search automation ideas">
-               <span id="crossId" *ngIf="TaskName"
-             (click)="clearText()"
-               class="far fa-times-circle form-control-feedback"
-               
-               aria-hidden="true"
-               style="cursor: pointer; pointer-events: all;"
-               uib-tooltip="clear">
-               
-         </span>
-               <!--  <div class="input-group-append">
+      <!-- Another variation with a button Started -->
+      <div class="form-group has-search">
+        <!-- <button class="btn btn-default" contenteditable="false"><i class="fa fa-search form-control-feedback"></i></button> -->
+
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" id="searchinput" class="form-control" [(ngModel)]="TaskName"
+          placeholder="Search automation ideas">
+        <span id="crossId" *ngIf="TaskName" (click)="clearText()" class="far fa-times-circle form-control-feedback"
+          aria-hidden="true" style="cursor: pointer; pointer-events: all;" uib-tooltip="clear">
+
+        </span>
+        <!--  <div class="input-group-append">
                                  <button class="btn btn-secondary ml-2" style="font-size:12px;width: 50px;height: 37px;
                                  padding: 0 .0;border-radius: 0;"  type="button">Search</button>
                                </div> -->
-               <!-- <span id="searchclear" class="fa fa-times" aria-hidden="false"></span>  -->
-             </div>
-             <!-- Another variation with a button Ended -->
-           </div>
-           <div class="col-md-3">
-             <!--   <div class="dropdown">
+        <!-- <span id="searchclear" class="fa fa-times" aria-hidden="false"></span>  -->
+      </div>
+      <!-- Another variation with a button Ended -->
+    </div>
+    <div class="col-md-3">
+      <!--   <div class="dropdown">
                                        <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
                                                    STATUS | Any
                                                  </button>
@@ -104,14 +103,14 @@
                                                <a class="dropdown-item" href="#">Requested</a>
                                            </div>
                                        </div> -->
-             <select class="form-control" id="FormControlSelect1" [(ngModel)]="selectedValue1">
-               <option value="" [disabled]="false">STATUS | Any</option>
-               <option *ngFor="let status of defaultStatusArry" [ngValue]="status">{{status}}</option>
-             </select>
-           </div>
-       
-           <div class="col-md-3">
-             <!--      <div class="dropdown">
+      <select class="form-control" id="FormControlSelect1" [(ngModel)]="selectedValue1">
+        <option value="" [disabled]="false">STATUS | Any</option>
+        <option *ngFor="let status of defaultStatusArry" [ngValue]="status">{{status}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <!--      <div class="dropdown">
                                              <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
                                                        PRIORITY | Any
                                                      </button>
@@ -122,14 +121,14 @@
                                                  <a class="dropdown-item" href="#">Critical</a>
                                              </div>
                                          </div> -->
-             <select class="form-control" id="FormControlSelect2" [(ngModel)]="selectedValue2">
-               <option value="" [disabled]="false">PRIORITY | Any</option>
-               <option *ngFor="let priority of defaultPriorityArry" [ngValue]="priority">{{priority}}</option>
-             </select>
-       
-           </div>
-           <div class="col-md-3">
-             <!--     <div class="dropdown">
+      <select class="form-control" id="FormControlSelect2" [(ngModel)]="selectedValue2">
+        <option value="" [disabled]="false">PRIORITY | Any</option>
+        <option *ngFor="let priority of defaultPriorityArry" [ngValue]="priority">{{priority}}</option>
+      </select>
+
+    </div>
+    <div class="col-md-3">
+      <!--     <div class="dropdown">
                                                  <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
                                                            Created By | Any
                                                          </button>
@@ -139,128 +138,140 @@
                                                      <a class="dropdown-item" href="#">Kishore Kollipora (1)</a>
                                                  </div>
                                              </div> -->
-             <select class="form-control" id="FormControlSelect3" [(ngModel)]="selectedValue3">
-               <option value="" [disabled]="false">CREATED BY | Any</option>
-               <option *ngFor="let createdBy of defaultCreatedByArry" [ngValue]="createdBy">{{createdBy}}</option>
-             </select>
-       
-           </div>
-         </div>
-         <!-- Filter Search ended -->
-       
-         <!-- Data table started -->
-         <table class="table table-bordered" style="margin-top: 0%" >
-           <thead>
-             <tr>
-               <!-- <th>Firewall ID</th> -->
-               <th>Automation Idea Title</th>
-               <th style="width:90px">Priority</th>
-               <th style="width:180px">Status</th>
-               <th>Created By</th>
-               <th>Updated On</th>
-               <!--<th>Comments</th>
+      <select class="form-control" id="FormControlSelect3" [(ngModel)]="selectedValue3">
+        <option value="" [disabled]="false">CREATED BY | Any</option>
+        <option *ngFor="let createdBy of defaultCreatedByArry" [ngValue]="createdBy">{{createdBy}}</option>
+      </select>
+
+    </div>
+  </div>
+  <!-- Filter Search ended -->
+
+  <!-- Data table started -->
+  <table class="table table-bordered" style="margin-top: 0%">
+    <thead>
+      <tr>
+        <!-- <th>Firewall ID</th> -->
+        <th>Automation Idea Title</th>
+        <th style="width:90px">Priority</th>
+        <th style="width:180px">Status</th>
+        <th>Created By</th>
+        <th>Updated On</th>
+        <!--<th>Comments</th>
                <th>Actions</th> -->
-             </tr>
-           </thead>
-           <tbody>
-             <tr *ngFor="let task of tasksList | taskNameFilter:TaskName | filterByPriority: selectedValue2
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasksList | taskNameFilter:TaskName | filterByPriority: selectedValue2
                                                | filterByStatus: selectedValue1 
                                                | filterByUser: selectedValue3
                                                | filterByPriorityStatus: [selectedValue2,selectedValue1]
-                                               | paginate: { itemsPerPage: count, currentPage: p }" > 
-               <!-- <td>{{task.FirewallID}}</td> -->
-               <td>{{task.TaskName}}</td>
-               <td>{{task.Priority}}</td>
-               <!--<td>{{task.Status}}</td> -->
-              <td *ngIf="task.Status == 'Requested' ">
-               Automation is{{task.Status}}
-               <div id="progressID" class="row">
-                   <ul class="progressBartest" style="padding-left: 20px;padding-bottom: 0px">
-                     <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-                     <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-                     <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="far fa-dot-circle"></i></li>
-                     <li style="margin: 5px; bottom:5px;color: #8080807a;"><i class="fas fa-horizontal-rule"></i></li>
-                     <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle" aria-hidden="true"></i></li>
-                     <li style="margin: 5px; bottom: 5px; color: #8080807a; "><i class="fas fa-horizontal-rule"></i></li>
-                     <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle" aria-hidden="true"></i></li>
-                   </ul>
-                 </div> 
-             </td> 
-       
-       <!-- Planned Status -->
-       
-         <td *ngIf="task.Status == 'Planned'">
+                                               | paginate: { itemsPerPage: count, currentPage: p }">
+        <!-- <td>{{task.FirewallID}}</td> -->
+        <td>{{task.TaskName}}</td>
+        <td>{{task.Priority}}</td>
+        <!--<td>{{task.Status}}</td> -->
+        <td *ngIf="task.Status == 'Requested' ">
+          Automation is{{task.Status}}
+          <div id="progressID" class="row">
+            <ul class="progressBartest" style="padding-left: 20px;padding-bottom: 0px">
+              <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="far fa-dot-circle"></i></li>
+              <li style="margin: 5px; bottom:5px;color: #8080807a;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #8080807a; "><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle"
+                  aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </td>
+
+        <!-- Planned Status -->
+
+        <td *ngIf="task.Status == 'Planned'">
           <!--   <lable class="labelid">Automation is{{task.Status}}</lable>-->
           Automation is{{task.Status}}
-         <div class="row" id="progressID">
-           <ul class="progressBartest" style="padding-left: 20px;">
-             <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-right: 2px;margin-left: 6px;"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="far fa-dot-circle"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #8080807a; "><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle" aria-hidden="true"></i></li>
-           </ul>
-         </div>
-         </td>
-       
-         <!-- In Progress Status -->
-         <td *ngIf="task.Status == 'In Progress'">
-         Automation is{{task.Status}}
-         <div class="row" id="progressID">
-           <ul class="progressBartest" style="padding-left: 20px;">
-             <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="far fa-dot-circle" aria-hidden="true"></i></li>
-           </ul>
-         </div>
-       </td>  
-       
-       
-       <!-- Completed Status -->
-       
-         <td *ngIf="task.Status == 'Completed'">
-           Automation is{{task.Status}}
-         <div class="row" id="progressID">
-           <ul class="progressBartest" style="padding-left: 20px;">
-             <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-           </ul>
-         </div>
-       </td>  
-       
-       
-       <!-- Failed Status -->
-       
-         <td *ngIf="task.Status == 'Failed'">
-       <!--  <lable class="labelid">Automation is{{task.Status}}</lable> -->
-         Automation is{{task.Status}}
-         <div class="row" id="progressID">
-           <ul class="progressBartest" style="padding-left: 20px;">
-             <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
-             <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
-             <li style="color: red;margin-left: 6px;margin-right: 2px;"><i class="far fa-times-circle"></i></li>
-           </ul>
-         </div>
-       </td>
-       
-       <td>{{task.CreatedBy}}</td>
-       <td>{{task.UpdatedOn}}</td>
-       <!-- <td *ngIf="task.Comments.status == 'Failed'">
+          <div class="row" id="progressID">
+            <ul class="progressBartest" style="padding-left: 20px;">
+              <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-right: 2px;margin-left: 6px;"><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="far fa-dot-circle"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #8080807a; "><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #8080807a;margin-left: 6px;margin-right: 2px;"><i class="fas fa-circle"
+                  aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </td>
+
+        <!-- In Progress Status -->
+        <td *ngIf="task.Status == 'In Progress'">
+          Automation is{{task.Status}}
+          <div class="row" id="progressID">
+            <ul class="progressBartest" style="padding-left: 20px;">
+              <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="far fa-dot-circle"
+                  aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </td>
+
+
+        <!-- Completed Status -->
+
+        <td *ngIf="task.Status == 'Completed'">
+          Automation is{{task.Status}}
+          <div class="row" id="progressID">
+            <ul class="progressBartest" style="padding-left: 20px;">
+              <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </td>
+
+
+        <!-- Failed Status -->
+
+        <td *ngIf="task.Status == 'Failed'">
+          <!--  <lable class="labelid">Automation is{{task.Status}}</lable> -->
+          Automation is{{task.Status}}
+          <div class="row" id="progressID">
+            <ul class="progressBartest" style="padding-left: 20px;">
+              <li style="color: #13b4ce;margin-right: 2px"><i class="fas fa-check-circle" aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px; "><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom:5px;color: #13b4ce;"><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: #13b4ce;margin-left: 6px;margin-right: 2px;"><i class="fas fa-check-circle"
+                  aria-hidden="true"></i></li>
+              <li style="margin: 5px; bottom: 5px; color: #13b4ce; "><i class="fas fa-horizontal-rule"></i></li>
+              <li style="color: red;margin-left: 6px;margin-right: 2px;"><i class="far fa-times-circle"></i></li>
+            </ul>
+          </div>
+        </td>
+
+        <td>{{task.CreatedBy}}</td>
+        <td>{{task.UpdatedOn}}</td>
+        <!-- <td *ngIf="task.Comments.status == 'Failed'">
          {{task.Comments.message}}<br> <a href="" (click)="exportAsTEXT(task)">Download Output Files</a>
        </td>
        <td *ngIf="task.Comments.status == 'Completed'">
@@ -272,78 +283,80 @@
        <td *ngIf="task.Comments.status == 'Requested'">
          {{task.Comments.message}}
        </td> -->
-           <!-- <td *ngIf="task.Comments.status == 'In Progress'">
+        <!-- <td *ngIf="task.Comments.status == 'In Progress'">
              {{task.Comments.message}}
            </td>
            <td>
              <a><i class="far fa-edit"></i></a>
            </td> -->
-         </tr>
-        </tbody>
-       </table>
-       
-       <!-- Including the pagination control.-->
-         <div class="text-right">
-           <pagination-controls (pageChange)="p = $event"></pagination-controls>
-         </div>
-         <!-- Data table ended -->
-       
-       
-       
-        <!-- <app-footer></app-footer>  -->
-       </div>
-       <app-footer></app-footer>
-       <!-- Jumbotran ended -->
-       
-       <!-- Add New Deploy Firewall -->
-       <div class="modal" id="myModal">
-         <div class="modal-dialog modal-xl">
-           <div class="modal-content">
-             <div class="modal-header">
-               <h4 class="modal-title" id="myModalLabel">Add New Automation Idea</h4>
-               <button type="button" class="close" data-dismiss="modal" (click)="clearRegisterForm()">&times;</button>
-             </div>
-             <div class="modal-body">
-               <form [formGroup]="registerForm" (ngSubmit)="onDFSubmit()">
-                 <div class="row">
-                   <div class="col-sm-6">
-                     <div class="form-group">
-                       <label>
-                         <b>Automation Idea Title</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <input type="text" formControlName="taskname" [(ngModel)]="taskname1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.taskname.errors }"
-                       />
-                       <div *ngIf="submitted && f.taskname.errors" class="invalid-feedback">
-                         <div *ngIf="f.taskname.errors.required">Automation Idea is required</div>
-                         <div *ngIf="f.taskname.errors.minlength">Automation Idea must be at least 6 characters</div>
-                         </div>
-                     </div>
-                   </div>
-                   <div class="col-sm-6">                   
-                     <div class="form-group">
-                       <label for="Inputuname">
-                         <b>Any change in upcoming months</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <select class="form-control" formControlName="firewallName" [(ngModel)]="dfFNDefaultValue" (change)="changeFWName($event)" id="FormControlSelect1" [ngClass]="{ 'is-invalid': submitted && f.firewallName.errors }">
-                         <option value="" [disabled]="false">--- Select a Value ---</option>
-                         <option *ngFor="let firewallName of defaultNewFWArry">{{firewallName}}</option>
-                       </select>
-                       <div *ngIf="submitted && f.firewallName.errors" class="invalid-feedback">
-                         <div *ngIf="f.firewallName.errors.required">You must provide a value!</div>
-                       </div>
-                       
-                     </div>
-                   </div>
-                 </div>
-       
-                 <div class="row">
-                   <!-- 2nd row started -->
-       
-                   <div class="col-md-6">
-       
-                     <!--<div class="form-group">
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Including the pagination control.-->
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <!-- Data table ended -->
+
+
+
+  <!-- <app-footer></app-footer>  -->
+</div>
+<app-footer></app-footer>
+<!-- Jumbotran ended -->
+
+<!-- Add New Deploy Firewall -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add New Automation Idea</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="clearRegisterForm()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onDFSubmit()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>Automation Idea Title</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="taskname" [(ngModel)]="taskname1" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.taskname.errors }" />
+                <div *ngIf="submitted && f.taskname.errors" class="invalid-feedback">
+                  <div *ngIf="f.taskname.errors.required">Automation Idea is required</div>
+                  <div *ngIf="f.taskname.errors.minlength">Automation Idea must be at least 6 characters</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Any change in upcoming months</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="firewallName" [(ngModel)]="dfFNDefaultValue"
+                  (change)="changeFWName($event)" id="FormControlSelect1"
+                  [ngClass]="{ 'is-invalid': submitted && f.firewallName.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let firewallName of defaultNewFWArry">{{firewallName}}</option>
+                </select>
+                <div *ngIf="submitted && f.firewallName.errors" class="invalid-feedback">
+                  <div *ngIf="f.firewallName.errors.required">You must provide a value!</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- 2nd row started -->
+
+            <div class="col-md-6">
+
+              <!--<div class="form-group">
                        <label for="Inputuname">
                          <b>Firewall Name</b>
                          <span class="required-asteric" style="color:blue;">*</span>
@@ -356,21 +369,23 @@
                          <div *ngIf="f.firewallName.errors.required">You must provide a value!</div>
                        </div>
                      </div>-->
-                     <div class="form-group">
-                       <label for="Inputuname">
-                         <b>Priority</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <select class="form-control" formControlName="priority" id="priorityIDFW" [(ngModel)]="dfPriorityDefaultValue" (change)="changePriority($event)" [ngClass]="{ 'is-invalid': submitted && f.priority.errors }">
-                         <option value="" [disabled]="false">--- Select a Value ---</option>
-                         <option *ngFor="let priority of defaultNewPriorityArry" [ngValue]="priority">{{priority}}</option>
-                       </select>
-                       <div *ngIf="submitted && f.priority.errors" class="invalid-feedback">
-                         <div *ngIf="f.priority.errors.required">You must provide a value!</div>
-                       </div>
-                     </div>
-       
-                     <!--      <label for="website">
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Priority</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="priority" id="priorityIDFW"
+                  [(ngModel)]="dfPriorityDefaultValue" (change)="changePriority($event)"
+                  [ngClass]="{ 'is-invalid': submitted && f.priority.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let priority of defaultNewPriorityArry" [ngValue]="priority">{{priority}}</option>
+                </select>
+                <div *ngIf="submitted && f.priority.errors" class="invalid-feedback">
+                  <div *ngIf="f.priority.errors.required">You must provide a value!</div>
+                </div>
+              </div>
+
+              <!--      <label for="website">
                        <b>Operation to Execute</b>
                      </label>
                      <div class="custom-control custom-checkbox">
@@ -386,30 +401,31 @@
                        <input type="checkbox" class="custom-control-input" id="customCheck3">
                        <label class="custom-control-label" for="customCheck3">Firewall Upgrade</label>
                      </div> -->
-                   </div>
-       
-                   <div class="col-sm-6">
-                     <div class="form-group">
-                       <label>
-                         <b>User Details</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <input type="text" formControlName="userDetails" class="form-control" [(ngModel)]="UserDetails1" [ngClass]="{ 'is-invalid': submitted && f.userDetails.errors }"/>
-                       <div *ngIf="submitted && f.userDetails.errors" class="invalid-feedback">
-                         <div *ngIf="f.userDetails.errors.required">User Details is required</div>
-                       </div>
-                     </div>
-                     <!--    <div class="form-group">
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>User Details</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="userDetails" class="form-control" [(ngModel)]="UserDetails1"
+                  [ngClass]="{ 'is-invalid': submitted && f.userDetails.errors }" />
+                <div *ngIf="submitted && f.userDetails.errors" class="invalid-feedback">
+                  <div *ngIf="f.userDetails.errors.required">User Details is required</div>
+                </div>
+              </div>
+              <!--    <div class="form-group">
                        <label for="formGroupExampleInput2">
                          <b>Request Submitted on</b>
                        </label>
                        <input type="date" class="form-control" formControlName="date" id="formGroupExampleInput2" placeholder="mm/dd/yyyy hh:mm am">
                      </div> -->
-                   </div>
-                 </div>
-                 <!-- 2nd row ended -->
-       
-                 <!--        <div class="row">
+            </div>
+          </div>
+          <!-- 2nd row ended -->
+
+          <!--        <div class="row">
            
                    <div class="col-md-6">
                      <div class="form-group">
@@ -427,13 +443,13 @@
                      </div>
                    </div>
                  </div> -->
-                 <!-- 3rd row ended -->
-       
-       
-                 <div class="row">
-                   <!-- 4th row started -->
-                   <div class="col-md-6">
-                    <!-- <div class="form-group">
+          <!-- 3rd row ended -->
+
+
+          <div class="row">
+            <!-- 4th row started -->
+            <div class="col-md-6">
+              <!-- <div class="form-group">
                        <label for="Inputuname">
                          <b>Priority</b>
                          <span class="required-asteric" style="color:blue;">*</span>
@@ -446,20 +462,22 @@
                          <div *ngIf="f.priority.errors.required">You must provide a value!</div>
                        </div>
                      </div>-->
-                     <div class="form-group">
-                       <label for="exampleFormControlTextarea1">
-                         <b>Short Description</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <textarea class="form-control" formControlName="shortDescription" [(ngModel)]="ShortDescription1" id="exampleFormControlTextarea1" rows="3" [ngClass]="{ 'is-invalid': submitted && f.shortDescription.errors }"></textarea>
-                       <div *ngIf="submitted && f.shortDescription.errors" class="invalid-feedback">
-                         <div *ngIf="f.shortDescription.errors.required">Short Description is required</div>
-                       </div>
-                     </div>
-                   </div>
-       
-                   <div class="col-md-6">
-                    <!-- <div class="form-group">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  <b>Short Description</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <textarea class="form-control" formControlName="shortDescription" [(ngModel)]="ShortDescription1"
+                  id="exampleFormControlTextarea1" rows="3"
+                  [ngClass]="{ 'is-invalid': submitted && f.shortDescription.errors }"></textarea>
+                <div *ngIf="submitted && f.shortDescription.errors" class="invalid-feedback">
+                  <div *ngIf="f.shortDescription.errors.required">Short Description is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <!-- <div class="form-group">
                        <label for="exampleFormControlTextarea1">
                          <b>Short Description</b>
                          <span class="required-asteric" style="color:blue;">*</span>
@@ -469,13 +487,13 @@
                          <div *ngIf="f.shortDescription.errors.required">Short Description is required</div>
                        </div>
                      </div>-->
-                   </div>
-       
-                 </div>
-                 <!-- 4th row ended -->
-       
-       
-                 <!--      <div class="row">
+            </div>
+
+          </div>
+          <!-- 4th row ended -->
+
+
+          <!--      <div class="row">
                    <div class="col-md-6">
                      <div class="form-group">
                        <label for="exampleFormControlTextarea1">
@@ -488,294 +506,307 @@
                      </div>
                    </div>
                  </div> -->
-       
-       
-                 <div class="row">
-                   <div class="col-md-12">
-                     <!-- Attachements started -->
-                     <div class="form-group">
-       
-                       <label class="col-md-3 col-form-label" for="files">
-                         <b>Attachments</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <div class="col-md-9">
-                         <span class="hidden-file">
-                           <input type="file" formControlName="attachments" #fileInput ng2FileSelect [uploader]="uploader" (change)="onFileSelected($event)"  />
-                          
-                         </span>
-                         <div class="btn-group" (click)="fileInput.click()">
-                           <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
-                             <i class="icon-user icon-white">+</i> Attach New File
-                           </button>
-                         </div>
-                       </div>
-                       <div *ngIf="submitted && f.attachments.errors" class="text-danger">
-                           <div *ngIf="f.attachments.errors.required" style="font-size: 13px;
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Attachements started -->
+              <div class="form-group">
+
+                <label class="col-md-3 col-form-label" for="files">
+                  <b>Attachments</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <div class="col-md-9">
+                  <span class="hidden-file">
+                    <input type="file" formControlName="attachments" #fileInput ng2FileSelect [uploader]="uploader"
+                      (change)="onFileSelected($event)" />
+
+                  </span>
+                  <div class="btn-group" (click)="fileInput.click()">
+                    <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
+                      <i class="icon-user icon-white">+</i> Attach New File
+                    </button>
+                  </div>
+                </div>
+                <div *ngIf="submitted && f.attachments.errors" class="text-danger">
+                  <div *ngIf="f.attachments.errors.required" style="font-size: 13px;
                            font-weight: 400; color: #dc3545;line-height: 19px; ">Attachments is mandatory</div>
-                         </div>
-                     </div>
-                   </div>
-                   <!-- Attachements ended -->
-       
-                   <div class="col-md-9 mt-1">
-                     <table class="table table-bordered">
-                       <thead>
-                         <tr>
-                           <th>File</th>
-                           <th>Uploaded On</th>
-                           <th>Actions</th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                         <tr *ngFor="let item of uploader.queue">
-                           <td>
-                             {{ item?.file?.name }}
-                           </td>
-                           <td>
-       <!--                      {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
-                                 {{upLoadedDateFDToday}}
-                             <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
-                           </td>
-                           <td>
-                             <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
-                               <span class="fa fa-trash-o"></span>
-                             </button>
-                           </td>
-                         </tr>
-                       </tbody>
-                     </table>
-                   </div>
-                 </div>
-                 <!--  <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</button> -->
-                 <div class="modal-footer">
-                   <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">Submit Automation Idea</button>
-                   <!--         <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Close</button> -->
-                 </div>
-               </form>
-             </div>
-             <!-- <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+            <!-- Attachements ended -->
+
+            <div class="col-md-9 mt-1">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>File</th>
+                    <th>Uploaded On</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of uploader.queue">
+                    <td>
+                      {{ item?.file?.name }}
+                    </td>
+                    <td>
+                      <!--                      {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
+                      {{upLoadedDateFDToday}}
+                      <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
+                        <span class="fa fa-trash-o"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--  <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</button> -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">Submit
+              Automation Idea</button>
+            <!--         <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Close</button> -->
+          </div>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
                              <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide()">Close</button>
              </div> -->
-           </div>
-         </div>
-       </div>
-       <!-- Add New Deploy Firewall Ended -->
-       
-       <!-- Add New Firewall Migration -->
-       <div class="modal" id="myFMModal">
-         <div class="modal-dialog modal-xl">
-           <div class="modal-content">
-               <div *ngIf="isValid" class="alert alert-danger" role="alert">
-                   <p style="font-size: 13px">Source Firewall & Distination Firewall should not be same.</p>
-                 </div>          
-             <div class="modal-header">
-               
-               
-               <h4 class="modal-title" id="myModalLabel">Add New Firewall Migration</h4>
-               <button type="button" class="close" data-dismiss="modal" (click)="clearFMFormData()">&times;</button>
-             </div>
-             <div class="modal-body">
-               <form [formGroup]="registerFMForm" (ngSubmit)="onFMSubmit()">
-                 <div class="row">
-                   <div class="col-sm-6">
-                     <div class="form-group">
-                       <label>
-                         <b>Task Name</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <input type="text" formControlName="taskname" class="form-control" [(ngModel)]="taskname2" [ngClass]="{ 'is-invalid': submittedFM && f1.taskname.errors }"
-                       />
-                       <div *ngIf="submittedFM && f1.taskname.errors" class="invalid-feedback">
-                         <div *ngIf="f1.taskname.errors.required">Task Name is required</div>
-                         <div *ngIf="f1.taskname.errors.minlength">Task Name must be at least 6 characters</div>
-                       </div>
-                     </div>
-                   </div>
+    </div>
+  </div>
+</div>
+<!-- Add New Deploy Firewall Ended -->
 
-                   <div class="col-sm-6">                   
-                     <div class="form-group">
-                       <label for="Inputuname">
-                         <b>Priority</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <select class="form-control" formControlName="priority" [(ngModel)]="fmPriorityDefaultValue" id="FormControlSelect2" (change)="changePriority($event)" [ngClass]="{ 'is-invalid': submittedFM && f1.priority.errors }">
-                         <option value="" [disabled]="false">--- Select a Value ---</option>
-                         <option *ngFor="let FmPriority of defaultNewFMPriorityArry">{{FmPriority}}</option>
-                       </select>
-                       <div *ngIf="submittedFM && f1.priority.errors" class="invalid-feedback">
-                         <div *ngIf="f1.priority.errors.required">You must provide a value!</div>
-                       </div>
-                     </div>
-                   </div>
+<!-- Add New Firewall Migration -->
+<div class="modal" id="myFMModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div *ngIf="isValid" class="alert alert-danger" role="alert">
+        <p style="font-size: 13px">Source Firewall & Distination Firewall should not be same.</p>
+      </div>
+      <div class="modal-header">
 
-                 </div>
-       
-                 <div class="row">
-                   <!-- 2nd row started -->
-       
-                   <div class="col-md-6">
-       
-                     <div class="form-group">
-                       <label for="Inputuname">
-                         <b>Source Firewall</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <select class="form-control" formControlName="sourceFirewall" [(ngModel)]="fmSrcFirewallDefaultValue" (change)="changeFMSourceFirewall($event)" id="FormControlSelect1" [ngClass]="{ 'is-invalid': submittedFM && f1.sourceFirewall.errors }">
-                         <option value="" [disabled]="false">--- Select a Value ---</option>
-                         <option *ngFor="let srcFirewall of defaultSrcFMArry">{{srcFirewall}}</option>
-                       </select>
-                       <div *ngIf="submittedFM && f1.sourceFirewall.errors" class="invalid-feedback">
-                         <div *ngIf="f1.sourceFirewall.errors.required">You must provide a value!</div>
-                       </div>
-                     </div>
-       
-                   </div>
-       
-                   <div class="col-sm-6">
-                       <div class="form-group">
-                           <label for="Inputuname">
-                             <b>Destination Firewall</b>
-                             <span class="required-asteric" style="color:blue;">*</span>
-                           </label>
-                           <select class="form-control" formControlName="destFirewall" [(ngModel)]="fmDestFirewallDefaultValue"  (change)="changeFMDestFirewall($event)" id="FormControlSelect1" [ngClass]="{ 'is-invalid': submittedFM && f1.destFirewall.errors }">
-                             <option value="" [disabled]="false">--- Select a Value ---</option>
-                             <option *ngFor="let dstFirewall of defaultDstFMArry">{{dstFirewall}}</option>
-                           </select>
-                           <div *ngIf="submittedFM && f1.destFirewall.errors" class="invalid-feedback">
-                             <div *ngIf="f1.destFirewall.errors.required">You must provide a value!</div>
-                             <div *ngIf="f1.destFirewall.errors.mustNotMatch">Source & Destination Firewall's cannot be same</div>
-                           </div>
-                         </div>
-                   </div>
-                 </div>
-                 <!-- 2nd row ended -->
-       
-                 <div class="row"> 
-                     <div class="col-sm-6">
-                         <div class="form-group">
-                             <label>
-                               <b>User Details</b>
-                               <span class="required-asteric" style="color:blue;">*</span>
-                             </label>
-                             <input type="text" formControlName="userDetails" [(ngModel)]="UserDetils2" class="form-control" [ngClass]="{ 'is-invalid': submittedFM && f1.userDetails.errors }"/>
-                             <div *ngIf="submittedFM && f1.userDetails.errors" class="invalid-feedback">
-                               <div *ngIf="f1.userDetails.errors.required">User Details is required</div>
-                             </div> 
-                           </div>
-                     </div>
-               
-                <div class="col-sm-6">  
-                           <div class="form-group">
-                           <label for="exampleFormControlTextarea1">
-                             <b>Short Description</b>
-                             <span class="required-asteric" style="color:blue;">*</span>
-                           </label>
-                           <textarea class="form-control" formControlName="shortDescription" [(ngModel)]="ShortDescription2" id="exampleFormControlTextarea1" rows="3" [ngClass]="{ 'is-invalid': submittedFM && f1.shortDescription.errors }"></textarea>
-                           <div *ngIf="submittedFM && f1.shortDescription.errors" class="invalid-feedback">
-                             <div *ngIf="f1.shortDescription.errors.required">Short Description is required</div>
-                           </div>
-                         </div>                  
-                     </div>
-                   </div> 
-       
-                 <div class="row">
-                   
-                 
-                 </div>   <!-- 4th row ended -->
-               
-                 <div class="row">
-                   <div class="col-md-12">
-                     <!-- Attachements started -->
-                     <div class="form-group">
-                       <label class="col-md-3 col-form-label" for="files">
-                         <b>Attachments</b>
-                         <span class="required-asteric" style="color:blue;">*</span>
-                       </label>
-                       <div class="col-md-9">
-                         <span class="hidden-file">
-                           <input type="file" formControlName="attachments"  #fileInputFM ng2FileSelect [uploader]="fmUploader" (change)="onFileSelectedFM($event)" />
-                         </span>
-                         <div class="btn-group" (click)="fileInputFM.click()">
-                           <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
-                             <i class="icon-user icon-white">+</i> Attach New File
-                           </button>
-                         </div>
-                       </div>
-                       <div *ngIf="submittedFM && f1.attachments.errors" class="text-danger">
-                         <div *ngIf="f1.attachments.errors.required" style="font-size: 13px;
+
+        <h4 class="modal-title" id="myModalLabel">Add New Firewall Migration</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="clearFMFormData()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerFMForm" (ngSubmit)="onFMSubmit()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>Task Name</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="taskname" class="form-control" [(ngModel)]="taskname2"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.taskname.errors }" />
+                <div *ngIf="submittedFM && f1.taskname.errors" class="invalid-feedback">
+                  <div *ngIf="f1.taskname.errors.required">Task Name is required</div>
+                  <div *ngIf="f1.taskname.errors.minlength">Task Name must be at least 6 characters</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Priority</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="priority" [(ngModel)]="fmPriorityDefaultValue"
+                  id="FormControlSelect2" (change)="changePriority($event)"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.priority.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let FmPriority of defaultNewFMPriorityArry">{{FmPriority}}</option>
+                </select>
+                <div *ngIf="submittedFM && f1.priority.errors" class="invalid-feedback">
+                  <div *ngIf="f1.priority.errors.required">You must provide a value!</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <!-- 2nd row started -->
+
+            <div class="col-md-6">
+
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Source Firewall</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="sourceFirewall" [(ngModel)]="fmSrcFirewallDefaultValue"
+                  (change)="changeFMSourceFirewall($event)" id="FormControlSelect1"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.sourceFirewall.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let srcFirewall of defaultSrcFMArry">{{srcFirewall}}</option>
+                </select>
+                <div *ngIf="submittedFM && f1.sourceFirewall.errors" class="invalid-feedback">
+                  <div *ngIf="f1.sourceFirewall.errors.required">You must provide a value!</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Destination Firewall</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="destFirewall" [(ngModel)]="fmDestFirewallDefaultValue"
+                  (change)="changeFMDestFirewall($event)" id="FormControlSelect1"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.destFirewall.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let dstFirewall of defaultDstFMArry">{{dstFirewall}}</option>
+                </select>
+                <div *ngIf="submittedFM && f1.destFirewall.errors" class="invalid-feedback">
+                  <div *ngIf="f1.destFirewall.errors.required">You must provide a value!</div>
+                  <div *ngIf="f1.destFirewall.errors.mustNotMatch">Source & Destination Firewall's cannot be same</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2nd row ended -->
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>User Details</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="userDetails" [(ngModel)]="UserDetils2" class="form-control"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.userDetails.errors }" />
+                <div *ngIf="submittedFM && f1.userDetails.errors" class="invalid-feedback">
+                  <div *ngIf="f1.userDetails.errors.required">User Details is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  <b>Short Description</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <textarea class="form-control" formControlName="shortDescription" [(ngModel)]="ShortDescription2"
+                  id="exampleFormControlTextarea1" rows="3"
+                  [ngClass]="{ 'is-invalid': submittedFM && f1.shortDescription.errors }"></textarea>
+                <div *ngIf="submittedFM && f1.shortDescription.errors" class="invalid-feedback">
+                  <div *ngIf="f1.shortDescription.errors.required">Short Description is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+
+          </div> <!-- 4th row ended -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Attachements started -->
+              <div class="form-group">
+                <label class="col-md-3 col-form-label" for="files">
+                  <b>Attachments</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <div class="col-md-9">
+                  <span class="hidden-file">
+                    <input type="file" formControlName="attachments" #fileInputFM ng2FileSelect [uploader]="fmUploader"
+                      (change)="onFileSelectedFM($event)" />
+                  </span>
+                  <div class="btn-group" (click)="fileInputFM.click()">
+                    <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
+                      <i class="icon-user icon-white">+</i> Attach New File
+                    </button>
+                  </div>
+                </div>
+                <div *ngIf="submittedFM && f1.attachments.errors" class="text-danger">
+                  <div *ngIf="f1.attachments.errors.required" style="font-size: 13px;
                          font-weight: 400; color: #dc3545;line-height: 19px; ">Attachments is mandatory</div>
-                       </div>
-                     </div>
-                   </div>
-                   <!-- Attachements ended -->
-       
-                   <div class="col-md-9 mt-1">
-                     <table class="table table-bordered">
-                       <thead>
-                         <tr>
-                           <th>Name</th>
-                           <th>Uploaded On</th>
-                           <th>Actions</th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                         <tr *ngFor="let item of fmUploader.queue">
-                           <td>
-                             {{ item?.file?.name }}
-                           </td>
-                           <td>
-                             {{ upLoadedDateFMToday }}
-                            <!-- {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
-                             <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
-                           </td>
-                           <td>
-                             <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
-                               <span class="fa fa-trash-o"></span>
-                             </button>
-                           </td>
-                         </tr>
-                       </tbody>
-                     </table>
-                   </div>
-                 </div>
-                 <div class="modal-footer">
-                   <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">DEPLOY MIGRATION</button>
-                 </div>
-               </form>
-             </div>
-           </div>
-         </div>
-       </div>
-       <!-- Add New Firewall Migration Ended -->
-       
-       
-       <!-- Add New Firewall Upgrade -->
-       <div class="modal" id="myFUModal">
-           <div class="modal-dialog modal-xl">
-             <div class="modal-content">
-               <div class="modal-header">
-                 <h4 class="modal-title" id="myModalLabel">Add New Firewall Upgrade</h4>
-                 <button type="button" class="close" data-dismiss="modal" (click)="clearFUFormData()">&times;</button>
-               </div>
-               <div class="modal-body">
-                 <form [formGroup]="registerFUForm" (ngSubmit)="onFUSubmit()">
-                   <div class="row">
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label>
-                           <b>Task Name</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <input type="text" formControlName="taskname" [(ngModel)]="taskname3" class="form-control" [ngClass]="{ 'is-invalid': submittedFU && f2.taskname.errors }"
-                         />
-                         <div *ngIf="submittedFU && f2.taskname.errors" class="invalid-feedback">
-                           <div *ngIf="f2.taskname.errors.required">Task Name is required</div>
-                           <div *ngIf="f2.taskname.errors.minlength">Task Name must be at least 6 characters</div>
-                         </div>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
+                </div>
+              </div>
+            </div>
+            <!-- Attachements ended -->
+
+            <div class="col-md-9 mt-1">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Uploaded On</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of fmUploader.queue">
+                    <td>
+                      {{ item?.file?.name }}
+                    </td>
+                    <td>
+                      {{ upLoadedDateFMToday }}
+                      <!-- {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
+                      <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
+                        <span class="fa fa-trash-o"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">DEPLOY
+              MIGRATION</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add New Firewall Migration Ended -->
+
+
+<!-- Add New Firewall Upgrade -->
+<div class="modal" id="myFUModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add New Firewall Upgrade</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="clearFUFormData()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerFUForm" (ngSubmit)="onFUSubmit()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>Task Name</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="taskname" [(ngModel)]="taskname3" class="form-control"
+                  [ngClass]="{ 'is-invalid': submittedFU && f2.taskname.errors }" />
+                <div *ngIf="submittedFU && f2.taskname.errors" class="invalid-feedback">
+                  <div *ngIf="f2.taskname.errors.required">Task Name is required</div>
+                  <div *ngIf="f2.taskname.errors.minlength">Task Name must be at least 6 characters</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
               <!--         <div class="form-group">
                          <label>
                            <b>Status</b>
@@ -789,26 +820,28 @@
                            <div *ngIf="f2.status.errors.required">You must provide a value!</div>
                          </div>
                        </div> -->
-                       <div class="form-group">
-                         <label for="Inputuname">
-                           <b>Firewall Name</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <select class="form-control" formControlName="firewallName" [(ngModel)]="fuFirewallNameDefaultValue" (change)="changeFUFWName($event)" id="FormControlSelect1" [ngClass]="{ 'is-invalid': submittedFU && f2.firewallName.errors }">
-                           <option value="" [disabled]="false">--- Select a Value ---</option>
-                           <option *ngFor="let firewallNameFU of defaultNewFUFWArry">{{firewallNameFU}}</option>
-                         </select>
-                         <div *ngIf="submittedFU && f2.firewallName.errors" class="invalid-feedback">
-                           <div *ngIf="f2.firewallName.errors.required">You must provide a value!</div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-         
-                   <div class="row">
-                     <!-- 2nd row started -->
-         
-                     <div class="col-md-6">
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Firewall Name</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="firewallName" [(ngModel)]="fuFirewallNameDefaultValue"
+                  (change)="changeFUFWName($event)" id="FormControlSelect1"
+                  [ngClass]="{ 'is-invalid': submittedFU && f2.firewallName.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let firewallNameFU of defaultNewFUFWArry">{{firewallNameFU}}</option>
+                </select>
+                <div *ngIf="submittedFU && f2.firewallName.errors" class="invalid-feedback">
+                  <div *ngIf="f2.firewallName.errors.required">You must provide a value!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- 2nd row started -->
+
+            <div class="col-md-6">
               <!--         <div class="form-group">
                          <label for="Inputuname">
                            <b>Firewall Name</b>
@@ -822,38 +855,41 @@
                            <div *ngIf="f2.firewallName.errors.required">You must provide a value!</div>
                          </div>
                        </div> -->
-                       <div class="form-group">
-                         <label for="Inputuname">
-                           <b>Priority</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <select class="form-control" formControlName="priority" [(ngModel)]="fuPriorityDefaultValue" id="FormControlSelect2" (change)="changeFUPriority($event)" [ngClass]="{ 'is-invalid': submittedFU && f2.priority.errors }">
-                           <option value="" [disabled]="false">--- Select a Value ---</option>
-                           <option *ngFor="let priorityFU of defaultNewFUPriorityArry" >{{priorityFU}}</option>
-                         </select>
-                         <div *ngIf="submittedFU && f2.priority.errors" class="invalid-feedback">
-                           <div *ngIf="f2.priority.errors.required">You must provide a value!</div>
-                         </div>
-                       </div>
-                     </div>
-         
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label>
-                           <b>User Details</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <input type="text" formControlName="userDetails" [(ngModel)]="UserDetils3" class="form-control" [ngClass]="{ 'is-invalid': submittedFU && f2.userDetails.errors }"/>
-                         <div *ngIf="submittedFU && f2.userDetails.errors" class="invalid-feedback">
-                           <div *ngIf="f2.userDetails.errors.required">User Details is required</div> 
-                         </div> 
-                       </div>
-                     </div>
-                   </div>
-                   <!-- 2nd row ended -->
-         
-                   <!--3rd row started --> 
-                  <!-- <div class="row"> 
+              <div class="form-group">
+                <label for="Inputuname">
+                  <b>Priority</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <select class="form-control" formControlName="priority" [(ngModel)]="fuPriorityDefaultValue"
+                  id="FormControlSelect2" (change)="changeFUPriority($event)"
+                  [ngClass]="{ 'is-invalid': submittedFU && f2.priority.errors }">
+                  <option value="" [disabled]="false">--- Select a Value ---</option>
+                  <option *ngFor="let priorityFU of defaultNewFUPriorityArry">{{priorityFU}}</option>
+                </select>
+                <div *ngIf="submittedFU && f2.priority.errors" class="invalid-feedback">
+                  <div *ngIf="f2.priority.errors.required">You must provide a value!</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  <b>User Details</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <input type="text" formControlName="userDetails" [(ngModel)]="UserDetils3" class="form-control"
+                  [ngClass]="{ 'is-invalid': submittedFU && f2.userDetails.errors }" />
+                <div *ngIf="submittedFU && f2.userDetails.errors" class="invalid-feedback">
+                  <div *ngIf="f2.userDetails.errors.required">User Details is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2nd row ended -->
+
+          <!--3rd row started -->
+          <!-- <div class="row"> 
                        <div class="col-sm-6">
                          <div class="form-group">
                            <label>
@@ -881,89 +917,94 @@
                            </div>
                          </div>
                        </div>
-                     </div> --> <!--3rd row ended -->
-         
-                   <div class="row">
-                     <!-- 4th row started -->
-                        <div class="col-md-6">
-                       <div class="form-group">
-                         <label for="exampleFormControlTextarea1">
-                           <b>Short Description</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <textarea class="form-control"  [(ngModel)]="ShortDescription3" formControlName="shortDescription" id="shortDescriptionID" rows="3" [ngClass]="{ 'is-invalid': submittedFU && f2.shortDescription.errors }"></textarea>
-                         <div *ngIf="submittedFU && f2.shortDescription.errors" class="invalid-feedback">
-                           <div *ngIf="f2.shortDescription.errors.required">Short Description is required</div>
-                         </div> 
-                       </div>
-                     </div>
-         
-                   </div>
-                   <!-- 4th row ended -->
-         
-                   <div class="row">
-                     <div class="col-md-12">
-                       <!-- Attachements started -->
-                       <div class="form-group">
-         
-                         <label class="col-md-3 col-form-label" for="files">
-                           <b>Attachments</b>
-                           <span class="required-asteric" style="color:blue;">*</span>
-                         </label>
-                         <div class="col-md-9">
-                           <span class="hidden-file">
-                             <input type="file"  #fileInputFU ng2FileSelect [uploader]="fuUploader" (change)="onFileSelectedFU($event)" />
-                           </span>
-                           <div class="btn-group" (click)="fileInputFU.click()">
-                             <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
-                               <i class="icon-user icon-white">+</i> Attach New File
-                             </button>
-                           </div>
-                         </div>
-                         <div *ngIf="submittedFU && f2.attachments.errors" class="text-danger">
-                           <div *ngIf="f2.attachments.errors.required" style="font-size: 13px;
+                     </div> -->
+          <!--3rd row ended -->
+
+          <div class="row">
+            <!-- 4th row started -->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">
+                  <b>Short Description</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <textarea class="form-control" [(ngModel)]="ShortDescription3" formControlName="shortDescription"
+                  id="shortDescriptionID" rows="3"
+                  [ngClass]="{ 'is-invalid': submittedFU && f2.shortDescription.errors }"></textarea>
+                <div *ngIf="submittedFU && f2.shortDescription.errors" class="invalid-feedback">
+                  <div *ngIf="f2.shortDescription.errors.required">Short Description is required</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- 4th row ended -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Attachements started -->
+              <div class="form-group">
+
+                <label class="col-md-3 col-form-label" for="files">
+                  <b>Attachments</b>
+                  <span class="required-asteric" style="color:blue;">*</span>
+                </label>
+                <div class="col-md-9">
+                  <span class="hidden-file">
+                    <input type="file" #fileInputFU ng2FileSelect [uploader]="fuUploader"
+                      (change)="onFileSelectedFU($event)" />
+                  </span>
+                  <div class="btn-group" (click)="fileInputFU.click()">
+                    <button type="button" class="btn btn-primary" style="background-color: #004f6bfa!important;">
+                      <i class="icon-user icon-white">+</i> Attach New File
+                    </button>
+                  </div>
+                </div>
+                <div *ngIf="submittedFU && f2.attachments.errors" class="text-danger">
+                  <div *ngIf="f2.attachments.errors.required" style="font-size: 13px;
                            font-weight: 400; color: #dc3545;line-height: 19px; ">Attachments is mandatory</div>
-                         </div>
-                       </div>
-                     </div>
-                     <!-- Attachements ended -->
-         
-                     <div class="col-md-9 mt-1">
-                       <table class="table table-bordered">
-                         <thead>
-                           <tr>
-                             <th>Name</th>
-                             <th>Uploaded On</th>
-                             <th>Actions</th>
-                           </tr>
-                         </thead>
-                         <tbody>
-                           <tr *ngFor="let item of fuUploader.queue">
-                             <td>
-                               {{ item?.file?.name }}
-                             </td>
-                             <td>
-                               {{upLoadedDateFUToday}}
-                             <!--  {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
-                               <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
-                             </td>
-                             <td>
-                               <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
-                                 <span class="fa fa-trash-o"></span>
-                                 
-                               </button>
-                             </td>
-                           </tr>
-                         </tbody>
-                       </table>
-                     </div>
-                   </div>
-                   <div class="modal-footer">
-                     <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">DEPLOY UPGRADE</button>
-                   </div>
-                 </form>
-               </div>
-             </div>
-           </div>
-         </div>
-         <!-- Add New Firewall Upgrade Ended -->
+                </div>
+              </div>
+            </div>
+            <!-- Attachements ended -->
+
+            <div class="col-md-9 mt-1">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Uploaded On</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of fuUploader.queue">
+                    <td>
+                      {{ item?.file?.name }}
+                    </td>
+                    <td>
+                      {{upLoadedDateFUToday}}
+                      <!--  {{ item?.file?.size/1024/1024 | number:'.2' }} MB -->
+                      <!--  {{todayDate | date : 'yyyy-MM-dd hh:mm'}} -->
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-md" (click)="item.remove()">
+                        <span class="fa fa-trash-o"></span>
+
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" style="background-color: #004f6bfa!important;">DEPLOY
+              UPGRADE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add New Firewall Upgrade Ended -->
