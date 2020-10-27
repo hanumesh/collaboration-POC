@@ -5,3 +5,7 @@
     padding-right: 20%;
     max-height: 510px;
 }
+.bg-img{
+    position: fixed;
+    width: 100%;    
+}
