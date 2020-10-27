@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { DeployFirewallsComponent } from './deploy-firewalls/deploy-firewalls.component';
 import { TrendsComponent } from './trends/trends.component';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { SearchPipe } from './search.pipe';
@@ -25,13 +24,13 @@ import { FilterByPriorityPipe } from './filter-by-priority.pipe';
 import { FilterByPriorityStatusPipe } from './filter-by-priority-status.pipe';
 import { FilterByUserPipe } from './filter-by-user.pipe';
 import { AutomateIdeasComponent } from './automate-ideas/automate-ideas.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DeployFirewallsComponent,
     TrendsComponent,
     MyTasksComponent,
     SearchPipe,
@@ -43,7 +42,8 @@ import { AutomateIdeasComponent } from './automate-ideas/automate-ideas.componen
     FilterByPriorityPipe,
     FilterByPriorityStatusPipe,
     FilterByUserPipe,
-    AutomateIdeasComponent
+    AutomateIdeasComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

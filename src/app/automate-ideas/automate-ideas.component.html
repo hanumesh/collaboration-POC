@@ -14,8 +14,7 @@
   <div class="row">
     <div class="col-md-12" style="padding-top: 5%; padding-bottom: 2%">
       <button type="button" class="btn btn-primary custom-btn-lg"
-        style="font-size: 16px;line-height: 1;" data-toggle="modal" data-target="#myModal">
-        <!-- <i class="icon-user icon-white">+</i>NEW DEPLOY FIREWALL -->
+        style="font-size: 16px;line-height: 1;" data-toggle="modal" data-target="#myModal">      
         + NEW AUTOMATION IDEAS
       </button>
 
@@ -34,30 +33,7 @@
     </div>
 
   </div>
-  <!--
-         <div class="row" style="padding-top: 3%;">
-           <div class="col-md-3">
-             <div class="btn-group">
-               <button type="button" class="btn btn-primary custom-btn" style="font-size: 16px;line-height: 1;" data-toggle="modal" data-target="#myModal">
-                 <i class="icon-user icon-white">+</i>NEW DEPLOY FIREWALL
-                Firewall Fresh<br/>Deployment
-               </button>
-             </div>
-           </div>
-           <div class="col-md-2">
-             <button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myFMModal">Firewall Migraion</button>
-           </div>
-           <div class="col-md-2">
-             <button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myFUModal">Firewall Upgrade</button>
-           </div>
-           <button type="button" style='font-size:24px'>
-             <i class='fa fa-download'></i>
-           </button>
-           <button type="button" id="refreshBtn" style="font-size:24px;color:grey;background-color: whitesmoke; margin-left: 2px">
-             <i class="fa fa-refresh"></i>
-           </button>
-         </div>
-       -->
+ 
   <!-- Filter Search started -->
   <div class="row" style="padding-top: 0%">
     <div class="col-md-3">
@@ -306,7 +282,7 @@
 <app-footer></app-footer>
 <!-- Jumbotran ended -->
 
-<!-- Add New Deploy Firewall -->
+<!-- Add New Automation Idea -->
 <div class="modal" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -383,24 +359,7 @@
                 <div *ngIf="submitted && f.priority.errors" class="invalid-feedback">
                   <div *ngIf="f.priority.errors.required">You must provide a value!</div>
                 </div>
-              </div>
-
-              <!--      <label for="website">
-                       <b>Operation to Execute</b>
-                     </label>
-                     <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="customCheck1">
-                       <label class="custom-control-label" for="customCheck1">Fresh Deployment</label>
-                     </div>
-       
-                     <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="customCheck2">
-                       <label class="custom-control-label" for="customCheck2">Firewall Migration</label>
-                     </div>
-                     <div class="custom-control custom-checkbox">
-                       <input type="checkbox" class="custom-control-input" id="customCheck3">
-                       <label class="custom-control-label" for="customCheck3">Firewall Upgrade</label>
-                     </div> -->
+              </div>            
             </div>
 
             <div class="col-sm-6">
@@ -580,7 +539,7 @@
     </div>
   </div>
 </div>
-<!-- Add New Deploy Firewall Ended -->
+<!-- Add New Automation Idea Ended -->
 
 <!-- Add New Firewall Migration -->
 <div class="modal" id="myFMModal">
