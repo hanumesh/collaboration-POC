@@ -6,12 +6,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { AutomateIdeasComponent } from './automate-ideas/automate-ideas.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   {path: "register", component: RegisterComponent},
   {path: "automateIdeas", component: AutomateIdeasComponent},
+  {path: "questions", component: QuestionsComponent},
   {path: "trends", component: TrendsComponent},
   {path: "my-tasks", component: MyTasksComponent},
 

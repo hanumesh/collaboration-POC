@@ -1,3 +1,179 @@
-<p>
-  questions works!
-</p>
+<app-header></app-header>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-3">
+      <Label class="labelClass"> Project Classification : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect1" [(ngModel)]="selectedValue1">
+        <option value="" [disabled]="false">Project Classification </option>
+        <option *ngFor="let Classification of ProjClassifyArry" [ngValue]="Classification">{{Classification}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Activity List : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect2" [(ngModel)]="selectedValue2">
+        <option value="" [disabled]="false"> Activity List </option>
+        <option *ngFor="let Activity of ActivityListArray" [ngValue]="Activity">{{Activity}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Requirement : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect3" [(ngModel)]="selectedValue3">
+        <option value="" [disabled]="false"> Requirement </option>
+        <option *ngFor="let Requirement of RequirementArray" [ngValue]="Requirement">{{Requirement}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Design : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect4" [(ngModel)]="selectedValue4">
+        <option value="" [disabled]="false"> Design </option>
+        <option *ngFor="let Design of DesignArray" [ngValue]="Design">{{Design}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">DesignComputerAidedEngineering List : </Label>
+    </div>
+    <div class="col-md-9">
+      <select class="form-control" id="FormControlSelect5" [(ngModel)]="selectedValue5">
+        <option value="" [disabled]="false"> DesignComputerAidedEngineering </option>
+        <option *ngFor="let DesignAided of DesignAidedArray" [ngValue]="DesignAided">
+          {{DesignAided}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Design-Computer-Aided-Design List : </Label>
+    </div>
+    <div class="col-md-9">
+      <select class="form-control" id="FormControlSelect6" [(ngModel)]="selectedValue6">
+        <option value="" [disabled]="false"> Design-Computer-Aided-Design </option>
+        <option *ngFor="let DesignComputerAided of DesignComputerAidedArray" [ngValue]="DesignComputerAided">
+          {{DesignComputerAided}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Implementation/Coding : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect7" [(ngModel)]="selectedValue7">
+        <option value="" [disabled]="false"> Implementation/Coding </option>
+        <option *ngFor="let Imp_code of Implementation_CodingArray" [ngValue]="Imp_code ">
+          {{Imp_code }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">SIV: Test case development : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect8" [(ngModel)]="selectedValue8">
+        <option value="" [disabled]="false"> SIV: Test case development </option>
+        <option *ngFor="let SIV_Dev of SIV_DevArray" [ngValue]="SIV_Dev">
+          {{SIV_Dev }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">SIV Test cases execution : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect9" [(ngModel)]="selectedValue9">
+        <option value="" [disabled]="false"> SIV Test cases execution </option>
+        <option *ngFor="let SIV_execution of SIV_executionArray" [ngValue]="SIV_execution">
+          {{SIV_execution }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">E2E Pipeline : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect10" [(ngModel)]="selectedValue10">
+        <option value="" [disabled]="false"> E2E_Pipeline </option>
+        <option *ngFor="let E2E_Pipeline of E2E_PipelineArray" [ngValue]="E2E_Pipeline">
+          {{E2E_Pipeline }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Deployment : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect11" [(ngModel)]="selectedValue11">
+        <option value="" [disabled]="false"> Deployment </option>
+        <option *ngFor="let Deployment of Deployment_Array" [ngValue]="Deployment">
+          {{Deployment }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Maintainance & Support : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect12" [(ngModel)]="selectedValue12">
+        <option value="" [disabled]="false"> Maintainance & Support : </option>
+        <option *ngFor="let support of Maintain_supportArray" [ngValue]="support">
+          {{support }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:15px;">
+    <div class="col-md-3">
+      <Label class="labelClass">Process Operations : </Label>
+    </div>
+    <div class="col-md-6">
+      <select class="form-control" id="FormControlSelect13" [(ngModel)]="selectedValue13">
+        <option value="" [disabled]="false"> Process Operations : </option>
+        <option *ngFor="let operations of Process_OpArray" [ngValue]="operations">
+          {{operations }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+</div>

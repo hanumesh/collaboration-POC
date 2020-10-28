@@ -25,8 +25,7 @@ export class AccountService {
 }
 
 login(username, password) {
-    alert(username+" "+password);
-  /*  return this.http.post<User>(`${environment.apiUrl}/authenticate`, { username, password })
+   /*  return this.http.post<User>(`${environment.apiUrl}/authenticate`, { username, password })
         .pipe(map(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(user));
@@ -46,8 +45,6 @@ logout() {
 }
 
 register(user: User) {
-    alert("Inside account service: register() function...");
-    alert("email: "+user.email+"\n"+"password: "+user.password+"\n"+"\n"+"name: "+user.username);
     var user = {
                 email: "kishore.kollipora@aricent.com",
                 username: "testuser",
