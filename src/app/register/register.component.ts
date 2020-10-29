@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 
 import { AccountService } from '../services/account.service';
 import { AlertService } from '../services/alert.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
       this.form = this.formBuilder.group({
           email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-          username: ['', Validators.required],
+          name: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
       });
   }
@@ -37,7 +38,7 @@ export class RegisterComponent implements OnInit {
  get f() { return this.form.controls; }
 
   onSubmit() {
-      alert("Inside onSubmit() function...");
+      
     this.submitted = true;
 
     // reset alerts on submit
@@ -49,7 +50,19 @@ export class RegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    this.accountService.register(this.form.value);
+    this.accountService.register(this.form.value).subscribe(
+        (data: any) => {
+            console.log(data);
+            this.router.navigate([ '/login' ]);
+          },
+          (err: HttpErrorResponse) => {
+            if (err.error.msg) {
+               console.log(err.error.msg, 'Undo');
+            } else {
+               console.log('Something Went Wrong!');
+            }
+          }
+        );
         // .pipe(first())
     /*    .subscribe({
             next: () => {

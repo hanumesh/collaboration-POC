@@ -24,7 +24,14 @@ export class AccountService {
     return this.userSubject.value;
 }
 
-login(username, password) {
+register(payload) {
+  return this.http.post(`${environment.baseURL}/register`, payload);
+}
+login(payload) {
+  return this.http.post(`${environment.baseURL}/login`, payload);
+}
+
+login1(username, password) {
    /*  return this.http.post<User>(`${environment.apiUrl}/authenticate`, { username, password })
         .pipe(map(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -44,7 +51,7 @@ logout() {
     this.router.navigate(['/login']);
 }
 
-register(user: User) {
+register1(user: User) {
     var user = {
                 email: "kishore.kollipora@aricent.com",
                 username: "testuser",

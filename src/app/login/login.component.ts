@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 
 import {AccountService } from '../services/account.service';
 import {AlertService } from '../services/alert.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -48,12 +49,26 @@ export class LoginComponent implements OnInit {
 
   this.loading = true;
 
-  this.accountService.login(this.f.username.value, this.f.password.value)
-  {
-    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/automateIdeas';
-     this.router.navigateByUrl(returnUrl);
-  }
- /*     .pipe(first())
+  this.accountService.login(this.form.value).subscribe(
+    (data: any) => {
+      let name = data.name;
+      localStorage.setItem('Name', name);
+      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/automateIdeas';
+      this.router.navigateByUrl(returnUrl);
+  
+      this.router.navigate([ '/' ]);
+    },
+    (err: HttpErrorResponse) => {
+      console.log(err.error);
+      if (err.error.msg) {
+        console.log(err.error.msg, 'Undo');
+      } else {
+        console.log('Something Went Wrong!');
+      }
+    }
+  )
+
+  /*     .pipe(first())
       .subscribe({
           next: () => {
               // get return url from query parameters or default to home page
