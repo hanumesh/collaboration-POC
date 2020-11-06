@@ -28,21 +28,21 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
       this.form = this.formBuilder.group({
-          email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+          email: ['', [Validators.required]],//,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
           name: ['', Validators.required],
-          password: ['', [Validators.required, Validators.minLength(6)]]
+          password: ['', [Validators.required]]
       });
   }
 
   // convenience getter for easy access to form fields
- get f() { return this.form.controls; }
+ //get f() { return this.form.controls; }
 
   onSubmit() {
       
-    this.submitted = true;
+    //this.submitted = true;
 
     // reset alerts on submit
-    this.alertService.clear();
+   // this.alertService.clear();
 
     // stop here if form is invalid
     if (this.form.invalid) {

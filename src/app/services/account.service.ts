@@ -25,10 +25,10 @@ export class AccountService {
 }
 
 register(payload) {
-  return this.http.post(`${environment.baseURL}/register`, payload);
+  return this.http.post(`${environment.baseURL}register`, payload);
 }
 login(payload) {
-  return this.http.post(`${environment.baseURL}/login`, payload);
+  return this.http.post(`${environment.baseURL}login`, payload);
 }
 
 login1(username, password) {
