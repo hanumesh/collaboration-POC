@@ -11,7 +11,7 @@ import { QuestionsComponent } from './questions/questions.component';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
-  {path: "register", component: RegisterComponent},
+  {path: "signup", component: RegisterComponent},
   {path: "automateIdeas", component: AutomateIdeasComponent},
   {path: "questions", component: QuestionsComponent},
   {path: "trends", component: TrendsComponent},

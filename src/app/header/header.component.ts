@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { User } from '../model/user';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +10,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  LoggedInUserEmail : string;
+  token: string;  
 
+  constructor(private accountService: AccountService,
+    private router: Router
+  ) {
 
-  constructor( ) {
-               }
+  }
 
-  ngOnInit() {  }
+  ngOnInit() {    
+    this.LoggedInUserEmail =  localStorage.getItem('LoggedInUserEmail');
+    this.token =  localStorage.getItem('token');
+   }
 
+  onLogout() {
+    this.accountService.logout(this.token).subscribe(result => {
+      this.router.navigateByUrl('/login');
+    });
+    this.router.navigateByUrl('/login');
+  }
 }

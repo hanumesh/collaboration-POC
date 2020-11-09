@@ -1,5 +1,54 @@
 <div>
     <img class="bg-img" src="assets/Login.png" />
+
+    <div *ngIf="isLoginErrorResp" class="alert alert-danger" role="alert">
+        <button type="button" style="margin-top: 0px;
+        font-size: 18px;" class="close" data-dismiss="alert">&times;</button>
+        <p style="font-size: 13px">{{errorLoginMsg}}</p>
+       </div>
+    <div class="container"> 
+        <!-- <div class="jumbotron" style="background-color: lightgrey; "> -->
+    <div class="card">
+      <!-- <h4 class="card-header">Login</h4> -->
+      <h4 class="card-header" style="background-color: #004f6bfa; padding: .75rem .75rem;">
+      <a style="padding-left: 125px;height: 10px;" class="navbar-brand">
+          <img style=" width: 100px; margin-left: 51px" id="Logoid" src="assets/Altran.png"/>
+      <p style="font-size: 14px;color:white;">Altran Collaboration Solution</p></a> </h4>
+      <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" >
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+              </div>
+              <!-- <div class="row"> -->
+              <div  class="form-group">
+                  <button id="lgnbtn" [disabled]="loading" class="btn btn-primary">
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                      Login
+                  </button>
+                  <!-- <span> -->
+                      <!-- <p>Don't have an account?</p> -->
+                      <a style="color: #004f6bfa;" routerLink="../signup" class="btn btn-link">Sign Up</a>
+                  <!-- </span> -->
+                <!-- </div> -->
+              </div>
+          </form>
+      </div>
+    </div>
+    </div>
+    <!--
     <div class="container">
         <div class="card">
             <h4 class="card-header">Login</h4>
@@ -31,5 +80,5 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

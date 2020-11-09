@@ -87,7 +87,7 @@ export class AutomateIdeasComponent implements OnInit {
   ShortDescription1='';
 
 
-  defaultStatusArry: string[] = ["Requested", "Planned", "In Progress", "Failed", "Complete"];
+  defaultStatusArry: string[] = ["Requested", "Planned", "In Progress", "Under Review", "Complete"];
   defaultPriorityArry: string[] = ["Low", "Medium", "High", "Critical"];
   defaultCreatedByArry: string[] = ["TestName1", "TestName2", "TestName3", "TestName4"];
   defaultFirewallNamesArry: string[] = ["Cisco", "Check Point", "Juniper", "Nokia", "Palo Alto"];

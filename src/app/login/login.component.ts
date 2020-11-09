@@ -3,9 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import {AccountService } from '../services/account.service';
-import {AlertService } from '../services/alert.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { AccountService } from '../services/account.service';
+import { AlertService } from '../services/alert.service';
 
 
 @Component({
@@ -13,74 +12,67 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
-  form: FormGroup;
+
+  isUserLoggedInSuccess: boolean;
+  loginForm: FormGroup;
   loading = false;
   submitted = false;
+  returnUrl: string;
+  isLoginErrorResp: boolean;
+  errorLoginMsg: string;
+
+  userData = {};
 
   constructor(private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private accountService: AccountService,
     private alertService: AlertService
-) { }
+  ) {
+   }
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-  });
-
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
   }
 
- // convenience getter for easy access to form fields
- get f() { return this.form.controls; }
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
 
- onSubmit() {
-  this.submitted = true;
+  getUrl(data){
+    return this.returnUrl = '/automateIdeas';
+    //  this.router.navigateByUrl('/automateIdeas');
+  }
 
-  // reset alerts on submit
-  this.alertService.clear();
+  onLoginSubmit() {
+    this.submitted = true;
 
-  // stop here if form is invalid
-  if (this.form.invalid) {
+    // reset alerts on submit
+    this.alertService.clear();
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
       return;
-  }
-
-  this.loading = true;
-
-  this.accountService.login(this.form.value).subscribe(
-    (data: any) => {
-      let name = data.name;
-      localStorage.setItem('Name', name);
-      const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/automateIdeas';
-      this.router.navigateByUrl(returnUrl);
-  
-      this.router.navigate([ '/' ]);
-    },
-    (err: HttpErrorResponse) => {
-      console.log(err.error);
-      if (err.error.msg) {
-        console.log(err.error.msg, 'Undo');
-      } else {
-        console.log('Something Went Wrong!');
-      }
     }
-  )
 
-  /*     .pipe(first())
-      .subscribe({
-          next: () => {
-              // get return url from query parameters or default to home page
-              const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-            //   this.router.navigateByUrl(returnUrl);
-            this.router.navigate("/deployfirewalls");
-          },
-          error: error => {
-              this.alertService.error(error);
-              this.loading = false;
-          }
-      }); */
-}
-
+    this.loading = true;
+    this.isLoginErrorResp=false;
+    this.userData = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
+    };
+    this.accountService.login(this.userData).subscribe((loginResp) => {
+      this.router.navigateByUrl('/automateIdeas');         
+    }, (errorLogin) => {
+      this.isLoginErrorResp=true;
+      this.loading = false;
+      console.log(errorLogin);    
+      this.errorLoginMsg = errorLogin.error.message;
+    });
+  }
 }

@@ -5,7 +5,6 @@ import { first } from 'rxjs/operators';
 
 import { AccountService } from '../services/account.service';
 import { AlertService } from '../services/alert.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -14,67 +13,77 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
-  form: FormGroup;
+  isRegSuccessResp: boolean;
+  isRegErrorResp: boolean;
+  errorRegMsg: string;
+
+  regForm: FormGroup;
   loading = false;
   submitted = false;
-
+  userRegister = {};
   constructor(
-      private formBuilder: FormBuilder,
-      private route: ActivatedRoute,
-      private router: Router,
-      private accountService: AccountService,
-      private alertService: AlertService
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private accountService: AccountService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
-      this.form = this.formBuilder.group({
-          email: ['', [Validators.required]],//,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-          name: ['', Validators.required],
-          password: ['', [Validators.required]]
-      });
+    this.regForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
   // convenience getter for easy access to form fields
- //get f() { return this.form.controls; }
+  get f() { return this.regForm.controls; }
 
-  onSubmit() {
-      
-    //this.submitted = true;
-
-    // reset alerts on submit
-   // this.alertService.clear();
-
+  onRegSubmit() {
+   
+    console.log(this.regForm.value.email + " " + this.regForm.value.username + " " + this.regForm.value.password);
+    this.submitted = true;
+    
+    this.alertService.clear();
+    this.isRegErrorResp = false;
     // stop here if form is invalid
-    if (this.form.invalid) {
-        return;
+    if (this.regForm.invalid) {
+      return;
     }
 
+    this.userRegister = {
+      username: this.regForm.value.username,
+      email: this.regForm.value.email,
+      password: this.regForm.value.password
+    };
+
     this.loading = true;
-    this.accountService.register(this.form.value).subscribe(
-        (data: any) => {
-            console.log(data);
-            this.router.navigate([ '/login' ]);
-          },
-          (err: HttpErrorResponse) => {
-            if (err.error.msg) {
-               console.log(err.error.msg, 'Undo');
-            } else {
-               console.log('Something Went Wrong!');
-            }
-          }
-        );
-        // .pipe(first())
-    /*    .subscribe({
-            next: () => {
-                alert("next() function");
-                this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                this.router.navigate(['/login'], { relativeTo: this.route });
-            },
-            error: error => {
-                 this.alertService.error(error);
-                this.loading = false;
-            }
-        }); */
-}
+    this.accountService.register(this.userRegister).subscribe(
+      (respReg) => {
+        //   this.ngZone.run(() => this.router.navigateByUrl('/employees-list'))
+        this.loading = false;
+        this.isRegSuccessResp = true;
+        this.isRegErrorResp = false;
+        // setTimeout(() => {
+        //   this.router.navigateByUrl('/login').then(e => {
+        //     if (e) {
+        //       console.log("Navigation is successful!");
+        //     } else {
+        //       console.log("Navigation has failed!");
+        //     }
+        //   });
+        //  }, 3000);
+
+      }, (errorReg) => {
+        this.loading = false;
+        console.log(errorReg);
+        this.isRegErrorResp = true;
+        // this.errorRegMsg = "Response Error:  " + errorReg.message;
+        this.errorRegMsg = errorReg.error.message;
+      });
+
+
+  }
 
 }
