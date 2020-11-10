@@ -4,68 +4,27 @@
         <button type="button" style="margin-top: 0px;
         font-size: 18px;" class="close" data-dismiss="alert">&times;</button>
         <p style="font-size: 13px">User registered successfully!</p>
-       </div>  
-       <div *ngIf="isRegErrorResp" class="alert alert-danger" role="alert">
+    </div>
+    
+    <div *ngIf="isRegErrorResp" class="alert alert-danger" role="alert">
         <button type="button" style="margin-top: 0px;
         font-size: 18px;" class="close" data-dismiss="alert">&times;</button>
         <p style="font-size: 13px">{{errorRegMsg}}</p>
-       </div>  
-    
+    </div>
+
     <div class="container">
-    <div class="card">
-    
-        <h4 class="card-header" style="background-color: #004f6bfa; padding: .75rem .75rem;">
-            <a style="padding-left: 185px;height: 10px;" class="navbar-brand">
-                <img style=" width: 100px; margin-left: 65px" id="Logoid" src="assets/Altran.png"/>
-            <p style="font-size: 14px;color:white;">Altran Firewall Deployment Solution</p></a> </h4>
-         
-      
-      <div class="card-body">
-          <form [formGroup]="regForm" (ngSubmit)="onRegSubmit()">
-              <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                      <div *ngIf="f.email.errors.required">Email is required</div>
-                      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                  </div>
-              </div>
-    
-              <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                      <div *ngIf="f.username.errors.required">Username is required</div>
-                  </div>
-              </div>
-              
-              <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                      <div *ngIf="f.password.errors.required">Password is required</div>
-                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                  </div>
-              </div>
-    
-              <div class="form-group">
-                  <button  id="rgstrbtn" [disabled]="loading" class="btn btn-primary">
-                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                      Sign Up 
-                  </button>
-                  <a style="color: #004f6bfa;" routerLink="../login" class="btn btn-link">Cancel</a>
-              </div>
-          </form>
-      </div>
-    </div>
-    </div>
-   <!-- <div class="container">
         <div class="card">
-            <h4 class="card-header">Register</h4>
+
+            <h4 class="card-header" style="background-color: #004f6bfa; padding: .75rem .75rem;">
+                <a style="padding-left: 185px;height: 10px;" class="navbar-brand">
+                    <img style=" width: 100px; margin-left: 65px" id="Logoid" src="assets/Altran.png" />
+                    <p style="font-size: 14px;color:white;">Altran Firewall Deployment Solution</p>
+                </a> </h4>
+
             <div class="card-body">
-                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <form [formGroup]="regForm" (ngSubmit)="onRegSubmit()">
                     <div class="form-group">
-                        <label for="email">Email address</label>
+                        <label for="email">Email</label>
                         <input type="email" formControlName="email" class="form-control"
                             [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -75,11 +34,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" formControlName="name" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                            <div *ngIf="f.username.errors.required">Username is required</div>
+                        <label for="firstname">firstname</label>
+                        <input type="text" formControlName="firstname" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstname.errors.required">firstname is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">lastname</label>
+                        <input type="text" formControlName="lastname" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastname.errors.required">lastname is required</div>
                         </div>
                     </div>
 
@@ -94,14 +62,14 @@
                     </div>
 
                     <div class="form-group">
-                        <button [disabled]="loading" class="btn btn-primary">
+                        <button id="rgstrbtn" [disabled]="loading" class="btn btn-primary">
                             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                            Register
+                            Sign Up
                         </button>
-                        <a routerLink="../login" class="btn btn-link">Cancel</a>
+                        <a style="color: #004f6bfa;" routerLink="../login" class="btn btn-link">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
-    </div>-->
+    </div>
 </div>

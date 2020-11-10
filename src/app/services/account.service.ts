@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, first, map, tap } from 'rxjs/operators';
+
+import jwt_decode from 'jwt-decode';
 
 import { environment } from '../environments/environment';
 import { User } from '../model/user';
+import { last } from '@angular/router/src/utils/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +40,8 @@ export class AccountService {
     private http: HttpClient) {
   }
 
+
+
   // getToken() {
   //   return localStorage.getItem("LoggedInUsertoken")
   // }
@@ -49,14 +54,28 @@ export class AccountService {
   // sendToken(token: string) {
   //   localStorage.setItem("LoggedInUsertoken", token)
   // }
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwt_decode(token);
+    }
+    catch (Error) {
+      return null;
+    }
+  }
 
   login(userData: any): Observable<any> {
-    let urlLogin = this.baseUri + '/login';    
-  
+    let urlLogin = this.baseUri + '/login';
+
     return this.http.post<any>(urlLogin, userData).pipe(map(token => {
       console.log(JSON.stringify(token));
+      let tokenInfo = this.getDecodedAccessToken(JSON.stringify(token)); // decode token
+      let firstname = tokenInfo.user.firstname; 
+      let lastname = tokenInfo.user.lastname; 
+       console.log(tokenInfo, firstname, lastname ); // show decoded token object in console`
+      let fullname = firstname + "  " + lastname;
       localStorage.setItem('LoggedInUserEmail', userData.email)
-      localStorage.setItem('token', (JSON.stringify(token)) );
+      localStorage.setItem('fullname', fullname);
+      localStorage.setItem('token', (JSON.stringify(token)));
       return token;
     }, (errorHandler) => {
       catchError(this.errorHandler)
@@ -66,7 +85,7 @@ export class AccountService {
   register(userRegister): Observable<any> {
     let urlReg = this.baseUri + '/signup';
     // let url = '${this.baseUri}/script/signup';
-    console.log("email: " + userRegister.email + "\n" + "password: " + userRegister.password + "\n" + "\n" + "name: " + userRegister.username);
+    console.log("email: " + userRegister.email + "\n" + "password: " + userRegister.password + "\n" + "\n" + "firstname: " + userRegister.firstname);
     return this.http.post(urlReg, userRegister)
       .pipe(catchError(this.errorHandler))
   }

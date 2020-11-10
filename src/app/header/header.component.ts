@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   
   LoggedInUserEmail : string;
   token: string;  
+  fullname: string;
 
   constructor(private accountService: AccountService,
     private router: Router
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {    
     this.LoggedInUserEmail =  localStorage.getItem('LoggedInUserEmail');
     this.token =  localStorage.getItem('token');
+    this.fullname = localStorage.getItem('fullname');
    }
 
   onLogout() {

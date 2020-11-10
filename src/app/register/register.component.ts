@@ -32,7 +32,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.regForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      username: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
@@ -42,7 +43,7 @@ export class RegisterComponent implements OnInit {
 
   onRegSubmit() {
    
-    console.log(this.regForm.value.email + " " + this.regForm.value.username + " " + this.regForm.value.password);
+    console.log(this.regForm.value.email + " " + this.regForm.value.firstname + " " + this.regForm.value.lastname + this.regForm.value.password);
     this.submitted = true;
     
     this.alertService.clear();
@@ -53,7 +54,8 @@ export class RegisterComponent implements OnInit {
     }
 
     this.userRegister = {
-      username: this.regForm.value.username,
+      firstname: this.regForm.value.firstname,
+      lastname: this.regForm.value.lastname,
       email: this.regForm.value.email,
       password: this.regForm.value.password
     };
@@ -65,6 +67,7 @@ export class RegisterComponent implements OnInit {
         this.loading = false;
         this.isRegSuccessResp = true;
         this.isRegErrorResp = false;
+        this.router.navigateByUrl('/login')
         // setTimeout(() => {
         //   this.router.navigateByUrl('/login').then(e => {
         //     if (e) {
@@ -73,7 +76,7 @@ export class RegisterComponent implements OnInit {
         //       console.log("Navigation has failed!");
         //     }
         //   });
-        //  }, 3000);
+        //  }, 1000);
 
       }, (errorReg) => {
         this.loading = false;
