@@ -66,47 +66,48 @@ export class AccountService {
   login(userData: any): Observable<any> {
     let urlLogin = this.baseUri + '/login';
 
-    return this.http.post<any>(urlLogin, userData).pipe(map(token => {
-      console.log(JSON.stringify(token));
-      let tokenInfo = this.getDecodedAccessToken(JSON.stringify(token)); // decode token
-      let firstname = tokenInfo.user.firstname; 
-      let lastname = tokenInfo.user.lastname; 
-       console.log(tokenInfo, firstname, lastname ); // show decoded token object in console`
+    return this.http.post<any>(urlLogin, userData).pipe(map(user => {
+      console.log(JSON.stringify(user));
+      let tokenInfo = this.getDecodedAccessToken(JSON.stringify(user.token)); // decode token
+      let firstname = tokenInfo.user.firstname;
+      let lastname = tokenInfo.user.lastname;
       let fullname = firstname + "  " + lastname;
       localStorage.setItem('LoggedInUserEmail', userData.email)
       localStorage.setItem('fullname', fullname);
-      localStorage.setItem('token', (JSON.stringify(token)));
-      return token;
+      localStorage.setItem('token', (JSON.stringify(tokenInfo)));
+      return user;
     }, (errorHandler) => {
-      catchError(this.errorHandler)
+      catchError(errorHandler)
     }));
   }
 
   register(userRegister): Observable<any> {
     let urlReg = this.baseUri + '/signup';
-    // let url = '${this.baseUri}/script/signup';
     console.log("email: " + userRegister.email + "\n" + "password: " + userRegister.password + "\n" + "\n" + "firstname: " + userRegister.firstname);
     return this.http.post(urlReg, userRegister)
       .pipe(catchError(this.errorHandler))
   }
 
-  logout(sessID) {
-    // let url = '${this.baseUri}/script/logout';
+  logout(token) {
     let urlLogOut = this.baseUri + '/logout';
-
+    //  let token = localStorage.getItem('token');
     let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
     httpHeaders = httpHeaders.set('Access-Control-Allow-Origin', '*');
-    httpHeaders = httpHeaders.set('session', sessID);
+    httpHeaders = httpHeaders.set('token', token);
     let options = {
       headers: httpHeaders
     };
     return this.http.get(urlLogOut, options).pipe(
-      map(result => {
-        localStorage.removeItem('loggedInUser')
-        localStorage.removeItem('sessionID')
-        localStorage.clear()
+      map(LogoutDone => {
+        console.log('LogoutDone', LogoutDone);
+        localStorage.removeItem('LoggedInUserEmail');
+        localStorage.removeItem('fullname');
+        localStorage.removeItem('token');
+        localStorage.clear();
         this.router.navigateByUrl('/login');
-        window.location.reload();
+        // window.location.reload();
+      }, (errorHandler) => {
+        catchError(errorHandler)
       })
     )
   }

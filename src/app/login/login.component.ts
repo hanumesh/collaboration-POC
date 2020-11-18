@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     };
     this.accountService.login(this.userData).subscribe((loginResp) => {
+      console.log('loginResp', loginResp);
       this.router.navigateByUrl('/automateIdeas');         
     }, (errorLogin) => {
       this.isLoginErrorResp=true;
